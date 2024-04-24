@@ -1,0 +1,31 @@
+{
+  "plays": {
+    "aCrookedTale": {
+      "name": "A crooked tale(2022)",
+      "by": "The Caretakers",
+      "photosUrls": [
+        "/photos/plays/a-crooked-tale/1.jpg",
+        "/photos/plays/a-crooked-tale/2.jpg",
+        "/photos/plays/a-crooked-tale/3.jpg"
+      ]
+    },
+    "blocked": {
+      "name": "(B)locked! (2021)",
+      "by": "Artyfarty",
+      "photosUrls": [
+        "/photos/plays/blocked/1.jpg",
+        "/photos/plays/blocked/2.jpg",
+        "/photos/plays/blocked/3.jpg"
+      ]
+    },
+    "exitStageLeftPursuedByAbear": {
+      "name": "Exit Stage left pursued by a bear (2020)",
+      "by": "The Caretakers",
+      "photosUrls": [
+        "/photos/plays/eslpbab/1.jpg",
+        "/photos/plays/eslpbab/2.jpg",
+        "/photos/plays/eslpbab/3.jpg"
+      ]
+    }
+  }
+}

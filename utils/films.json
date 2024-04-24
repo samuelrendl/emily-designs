@@ -1,0 +1,64 @@
+{
+  "shortFilms": {
+    "holdingOn": {
+      "name": "Holding on",
+      "director": "Joe T. Horn",
+      "dop": "Nicolas Waldvogel",
+      "photosUrls": [
+        "/photos/short-films/holding-on/1.jpg",
+        "/photos/short-films/holding-on/2.jpg",
+        "/photos/short-films/holding-on/3.jpg"
+      ]
+    },
+    "myNuclearFamily": {
+      "name": "My Nuclear Family",
+      "director": "Nevin George",
+      "dop": "Aaron Markus Graf",
+      "production": "Zhdk",
+      "photosUrls": [
+        "/photos/short-films/my-nuclear-family/1.jpg",
+        "/photos/short-films/my-nuclear-family/2.jpg",
+        "/photos/short-films/my-nuclear-family/3.png"
+      ]
+    },
+    "styx": {
+      "name": "Styx",
+      "director": "Philip Merki",
+      "dop": "Elias Ettlin",
+      "photosUrls": [
+        "/photos/short-films/styx/1.jpg",
+        "/photos/short-films/styx/2.jpg",
+        "/photos/short-films/styx/3.jpg"
+      ]
+    },
+    "mary": {
+      "name": "Mary",
+      "director": "Nevin George",
+      "dop": "Elias Bötticher",
+      "production": "Zhdk",
+      "costumes": "Joël Henz, Yannik Le Besognier, Emily Kontu",
+      "photosUrls": [
+        "/photos/short-films/mary/1.jpg",
+        "/photos/short-films/mary/2.png"
+      ]
+    },
+    "myristica": {
+      "name": "Myristica",
+      "director": "Philippe Mosimann",
+      "dop": "Gian Flurin M. Bearth",
+      "photosUrls": [
+        "/photos/short-films/myristica/1.jpg",
+        "/photos/short-films/myristica/2.png",
+        "/photos/short-films/myristica/3.png"
+      ]
+    },
+    "burrioptikAd": {
+      "name": "Ad for Burrioptik",
+      "by": "Dreaminggrain",
+      "photosUrls": [
+        "/photos/ads/burrioptik/1.jpg",
+        "/photos/ads/burrioptik/2.jpg"
+      ]
+    }
+  }
+}
