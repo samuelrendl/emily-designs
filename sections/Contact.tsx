@@ -13,13 +13,6 @@ export default function Contact() {
       >
         Instagram
       </Link>
-      <Link
-        href={"https://www.imdb.com/name/nm13903798/"}
-        target="_blank"
-        className="underline text-2xl"
-      >
-        IMBd
-      </Link>
 
     </div>
   );

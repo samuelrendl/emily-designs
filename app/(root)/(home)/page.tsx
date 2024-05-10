@@ -7,6 +7,7 @@ import costumeRecreations from "../../../utils/costumeRecreations.json";
 import sketches from "../../../utils/sketches.json";
 import sewingProjects from "../../../utils/sewingProjects.json";
 import photoProjects from "../../../utils/photoProjects.json";
+import Contact from "@/sections/Contact";
 
 export default function Home() {
   return (
@@ -46,6 +47,9 @@ export default function Home() {
           Photo projects
         </h2>
         <SinglePhotos url={photoProjects.urls} />
+      </div>
+      <div id="Contact" className="mx-2 mb-10 h-96 flex justify-center items-center">
+        <Contact />
       </div>
     </section>
   );
