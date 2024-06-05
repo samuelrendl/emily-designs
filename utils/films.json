@@ -1,5 +1,49 @@
 {
   "shortFilms": {
+    "scarlet": {
+      "name": "Scarlet",
+      "director": "Govind Chandran",
+      "dop": "Jamie Laxton",
+      "photosUrls": [
+        "/photos/short-films/scarlet/1.jpeg",
+        "/photos/short-films/scarlet/2.jpeg",
+        "/photos/short-films/scarlet/3.jpeg",
+        "/photos/short-films/scarlet/4.jpeg",
+        "/photos/short-films/scarlet/5.jpeg"
+      ]
+    },
+    "myNuclearFamily": {
+      "name": "My Nuclear Family",
+      "director": "Nevin George",
+      "dop": "Aaron Markus Graf",
+      "production": "Zhdk",
+      "photosUrls": [
+        "/photos/short-films/my-nuclear-family/1.jpeg",
+        "/photos/short-films/my-nuclear-family/2.jpeg",
+        "/photos/short-films/my-nuclear-family/3.jpeg"
+      ]
+    },
+    "myristica": {
+      "name": "Myristica",
+      "director": "Philippe Mosimann",
+      "dop": "Gian Flurin M. Bearth",
+      "photosUrls": [
+        "/photos/short-films/myristica/1.jpeg",
+        "/photos/short-films/myristica/2.jpeg",
+        "/photos/short-films/myristica/3.jpeg",
+        "/photos/short-films/myristica/4.jpeg",
+        "/photos/short-films/myristica/5.jpeg",
+        "/photos/short-films/myristica/6.jpeg"
+      ]
+    },
+    "mary": {
+      "name": "Mary",
+      "director": "Nevin George",
+      "dop": "Elias Bötticher",
+      "production": "Zhdk",
+      "costumes": "Joël Henz, Yannik Le Besognier, Emily Kontu",
+      "photosUrls": ["/photos/short-films/mary/1.jpeg"]
+    },
     "holdingOn": {
       "name": "Holding on",
       "director": "Joe T. Horn",
@@ -10,17 +54,6 @@
         "/photos/short-films/holding-on/3.jpg"
       ]
     },
-    "myNuclearFamily": {
-      "name": "My Nuclear Family",
-      "director": "Nevin George",
-      "dop": "Aaron Markus Graf",
-      "production": "Zhdk",
-      "photosUrls": [
-        "/photos/short-films/my-nuclear-family/1.jpg",
-        "/photos/short-films/my-nuclear-family/2.jpg",
-        "/photos/short-films/my-nuclear-family/3.png"
-      ]
-    },
     "styx": {
       "name": "Styx",
       "director": "Philip Merki",
@@ -29,27 +62,6 @@
         "/photos/short-films/styx/1.jpg",
         "/photos/short-films/styx/2.jpg",
         "/photos/short-films/styx/3.jpg"
-      ]
-    },
-    "mary": {
-      "name": "Mary",
-      "director": "Nevin George",
-      "dop": "Elias Bötticher",
-      "production": "Zhdk",
-      "costumes": "Joël Henz, Yannik Le Besognier, Emily Kontu",
-      "photosUrls": [
-        "/photos/short-films/mary/1.jpg",
-        "/photos/short-films/mary/2.png"
-      ]
-    },
-    "myristica": {
-      "name": "Myristica",
-      "director": "Philippe Mosimann",
-      "dop": "Gian Flurin M. Bearth",
-      "photosUrls": [
-        "/photos/short-films/myristica/1.jpg",
-        "/photos/short-films/myristica/2.png",
-        "/photos/short-films/myristica/3.png"
       ]
     },
     "burrioptikAd": {

@@ -11,7 +11,7 @@ import Contact from "@/sections/Contact";
 
 export default function Home() {
   return (
-    <section className="max-w-[1920px] mx-auto w-full pt-5">
+    <section className="max-w-[1800px] mx-auto w-full pt-5">
       <div className="mx-2 mb-10">
         <h2 className="text-2xl font-bold border-solid border-black border-b-2 mb-4 font-playfair">
           Short Films
