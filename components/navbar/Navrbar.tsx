@@ -26,7 +26,7 @@ const Navbar = () => {
 
   return (
     <header className="w-full bg-white sticky z-50 top-0 shadow-md shadow-black/5">
-      <nav className="flex justify-between items-center max-w-[1920px] mx-auto p-2 font-playfair">
+      <nav className="flex justify-between items-center max-w-[1810px] mx-auto p-2 font-playfair">
         <Link href="/">
           <p className="font-bold text-3xl max-sm:text-2xl ">Emily Kontu</p>
         </Link>
