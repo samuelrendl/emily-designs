@@ -47,6 +47,7 @@ export default function Home() {
           Photo projects
         </h2>
         <SinglePhotos url={photoProjects.urls} />
+        <p className="text-center border-t mt-1">Makeup by: Nimica artistry</p>
       </div>
       <div id="Contact" className="mx-2 mb-10 h-96 flex justify-center items-center">
         <Contact />

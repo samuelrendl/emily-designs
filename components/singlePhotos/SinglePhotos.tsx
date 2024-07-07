@@ -9,7 +9,10 @@ const SinglePhotos: FC<UrlsProps> = ({ url }) => {
   return (
     <div className="flex flex-wrap gap-6">
       {Object.entries(url).map(([key, item]) => (
-        <div key={key} className="relative overflow-hidden max-w-[500px] mx-auto">
+        <div
+          key={key}
+          className="relative overflow-hidden max-w-[500px] mx-auto"
+        >
           <Image
             src={item}
             alt={`Photo ${key + 1}`}
