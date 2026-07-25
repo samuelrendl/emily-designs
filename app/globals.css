@@ -2,3 +2,182 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ==========================================================================
+   DESIGN TOKENS — Emily Costumes design system
+   Ported from the "Emily Costumes Design System" project (tokens/*.css).
+   Values are verbatim; only --font-typewriter is rebound to the next/font
+   variable set in app/layout.tsx instead of a Google Fonts @import, so the
+   font is self-hosted and render-blocking requests are avoided.
+   Update these to re-sync with the design system.
+   ========================================================================== */
+
+:root {
+  /* --- Fonts ---
+     Brand call: "font as a typewriter". No brand font file was supplied;
+     Courier Prime is the design system's flagged substitution. */
+  --font-typewriter: var(--font-courier-prime), "Courier New", Courier, monospace;
+
+  --font-display: var(--font-typewriter);
+  --font-body: var(--font-typewriter);
+  --font-mono: var(--font-typewriter);
+
+  /* --- Color: clean black & white, no accents ---
+     Contrast and typography carry the design. */
+  --black-ink: #111111;
+  --black-soft: #1c1c1c;
+  --charcoal: #333333;
+  --paper: #ffffff;
+  --paper-dim: #f3f3f1;
+  --paper-white: #ffffff;
+  --ochre: #4d4d4d;
+  --ochre-bright: #6e6e6e;
+  --ochre-dim: #2a2a2a;
+  --rust: #111111;
+  --rust-dim: #000000;
+  --smoke: #6e6e6e;
+  --smoke-light: #a8a8a8;
+
+  --bg-page: var(--paper);
+  --bg-page-alt: var(--black-ink);
+  --bg-card: var(--paper-white);
+  --bg-overlay: rgba(17, 17, 17, 0.85);
+
+  --text-primary: var(--black-ink);
+  --text-primary-inverse: var(--paper-white);
+  --text-secondary: var(--smoke);
+  --text-secondary-inverse: var(--smoke-light);
+  --text-accent: var(--rust);
+  --text-ochre: var(--ochre-dim);
+
+  --border-primary: var(--black-ink);
+  --border-subtle: var(--smoke-light);
+  --border-ochre: var(--ochre);
+
+  --accent-primary: var(--rust);
+  --accent-primary-hover: var(--rust-dim);
+  --accent-ochre: var(--ochre);
+  --accent-ochre-hover: var(--ochre-bright);
+
+  --focus-ring: var(--black-ink);
+
+  /* --- Type composites ---
+     Hierarchy comes from size, weight, tracking and case — never from
+     mixing typefaces. Consumed via the .type-* classes below. */
+  --text-display-1: 700 clamp(40px, 6vw, 76px) / 1.02 var(--font-display);
+  --text-display-2: 700 clamp(28px, 3.6vw, 44px) / 1.08 var(--font-display);
+  --text-h1: 700 32px/1.2 var(--font-display);
+  --text-h2: 700 24px/1.3 var(--font-display);
+  --text-h3: 700 18px/1.4 var(--font-display);
+  --text-body-lg: 400 19px/1.65 var(--font-body);
+  --text-body: 400 16px/1.65 var(--font-body);
+  --text-body-sm: 400 14px/1.6 var(--font-body);
+  --text-label: 700 12px/1.4 var(--font-mono);
+  --text-caption: 400 13px/1.5 var(--font-mono);
+
+  --tracking-tight: -0.01em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.06em;
+  --tracking-wider: 0.14em;
+
+  /* --- Spacing (4px base) ---
+     Tailwind's default scale is the same 4px system and covers every value
+     here (--space-5 = 24px = `6`, --space-7 = 48px = `12`, and so on), so
+     layout uses Tailwind spacing utilities directly rather than aliasing
+     each token. These remain the reference definition. */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 144px;
+
+  /* --- Corners: mostly square, like a photo print or index card --- */
+  --radius-none: 0px;
+  --radius-sm: 2px;
+  --radius-md: 3px;
+  --radius-pill: 999px;
+
+  /* --- Shadows: a printed photo resting on a desk. Never colored or glowing. --- */
+  --shadow-photo: 0 1px 0 rgba(33, 31, 28, 0.06), 0 10px 24px -8px rgba(33, 31, 28, 0.35);
+  --shadow-lift: 0 18px 36px -14px rgba(33, 31, 28, 0.45);
+  --shadow-inset-frame: inset 0 0 0 1px rgba(33, 31, 28, 0.08);
+
+  /* --- Motion: shutter click and carriage return, not elastic UI easing. --- */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 120ms;
+  --duration-base: 200ms;
+  --duration-slow: 360ms;
+}
+
+@layer base {
+  body {
+    background: var(--bg-page);
+    color: var(--text-primary);
+    font: var(--text-body);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Focus is always visible — the palette has no color to fall back on. */
+  :focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
+  }
+
+  /* Motion is deliberate and mechanical; honour a request for none. */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* Composite type tokens. Declared in `components` so any Tailwind utility
+     (which lives in the later `utilities` layer) can still override them. */
+  .type-display-1 {
+    font: var(--text-display-1);
+    letter-spacing: var(--tracking-tight);
+    text-transform: uppercase;
+  }
+  .type-display-2 {
+    font: var(--text-display-2);
+    letter-spacing: var(--tracking-tight);
+    text-transform: uppercase;
+  }
+  .type-h1 {
+    font: var(--text-h1);
+    text-transform: uppercase;
+  }
+  .type-h2 {
+    font: var(--text-h2);
+    text-transform: uppercase;
+  }
+  .type-h3 {
+    font: var(--text-h3);
+    text-transform: uppercase;
+  }
+  .type-body-lg {
+    font: var(--text-body-lg);
+  }
+  .type-body {
+    font: var(--text-body);
+  }
+  .type-body-sm {
+    font: var(--text-body-sm);
+  }
+  .type-label {
+    font: var(--text-label);
+    letter-spacing: var(--tracking-wider);
+    text-transform: uppercase;
+  }
+  .type-caption {
+    font: var(--text-caption);
+  }
+}

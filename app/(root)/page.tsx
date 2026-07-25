@@ -1,57 +1,82 @@
-import PhotoComponent from "@/components/photoComponent/photoComponent";
-import SinglePhotos from "@/components/singlePhotos/SinglePhotos";
+import { ButtonLink, GalleryCard, Masonry } from "@/components/ui";
+import { categoryLabel, getGalleryItems } from "@/utils/portfolio";
 
-import films from "../../../utils/films.json";
-import plays from "../../../utils/plays.json";
-import costumeRecreations from "../../../utils/costumeRecreations.json";
-import sketches from "../../../utils/sketches.json";
-import sewingProjects from "../../../utils/sewingProjects.json";
-import photoProjects from "../../../utils/photoProjects.json";
-import Contact from "@/sections/Contact";
-
+/**
+ * Home — ink hero band over a short masonry of selected work.
+ *
+ * The headline is Emily's own line, lifted from her About copy, rather than
+ * the design system's sample hero ("I dress the story before it speaks"),
+ * which was written for the brief and not by her.
+ */
 export default function Home() {
+  const selected = getGalleryItems().slice(0, 6);
+
   return (
-    <section className="max-w-[1800px] mx-auto w-full pt-5">
-      <div className="mx-2 mb-10">
-        <h2 className="text-2xl font-bold border-solid border-black border-b-2 mb-4 font-playfair">
-          Short Films
-        </h2>
-        <PhotoComponent photos={films.shortFilms} />
-      </div>
-      <div className="mx-2 mb-10">
-        <h2 className="text-2xl font-bold border-solid border-black border-b-2 mb-4 font-playfair">
-          Plays
-        </h2>
-        <PhotoComponent photos={plays.plays} />
-      </div>
-      <div className="mx-2 mb-10">
-        <h2 className="text-2xl font-bold border-solid border-black border-b-2 mb-4 font-playfair">
-          Costume Recreations
-        </h2>
-        <SinglePhotos url={costumeRecreations.urls} />
-      </div>
-      <div className="mx-2 mb-10">
-        <h2 className="text-2xl font-bold border-solid border-black border-b-2 mb-4 font-playfair">
-          Sketches
-        </h2>
-        <SinglePhotos url={sketches.urls} />
-      </div>
-      <div className="mx-2 mb-10">
-        <h2 className="text-2xl font-bold border-solid border-black border-b-2 mb-4 font-playfair">
-          Individual Sewing Projects
-        </h2>
-        <SinglePhotos url={sewingProjects.urls} />
-      </div>
-      <div className="mx-2 mb-10">
-        <h2 className="text-2xl font-bold border-solid border-black border-b-2 mb-4 font-playfair">
-          Photo projects
-        </h2>
-        <SinglePhotos url={photoProjects.urls} />
-        <p className="text-center border-t mt-1">Makeup by: Nimica artistry</p>
-      </div>
-      <div id="Contact" className="mx-2 mb-10 h-96 flex justify-center items-center">
-        <Contact />
-      </div>
-    </section>
+    <>
+      <section className="bg-ink px-4 py-20 text-center text-primary-inverse sm:px-12 sm:py-24">
+        <p className="type-label text-ochre-bright">
+          Costume Design for Film &amp; Television
+        </p>
+        <h1 className="type-display-1 mx-auto mt-5 max-w-[900px]">
+          Are you ready to go time travelling through costumes?
+        </h1>
+        <div className="mt-8 flex flex-wrap justify-center gap-4">
+          <ButtonLink href="/gallery" variant="primary" surface="dark">
+            View Gallery
+          </ButtonLink>
+          <ButtonLink href="/contact" variant="secondary" surface="dark">
+            Get in Touch
+          </ButtonLink>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-[1800px] px-4 pb-16 pt-14 sm:px-12">
+        <h2 className="type-h2">Selected Work</h2>
+        <p className="type-body mt-2 max-w-[560px] text-secondary">
+          Costumes built for the screen and the stage — plus the sketches,
+          recreations and sewing projects behind them.
+        </p>
+
+        <div className="mt-8">
+          <Masonry>
+            {selected.map((item, index) =>
+              item.kind === "project" ? (
+                <GalleryCard
+                  key={item.key}
+                  photo={item.cover}
+                  title={item.project.title}
+                  caption={[
+                    item.project.year,
+                    categoryLabel(item.project.category),
+                  ]
+                    .filter(Boolean)
+                    .join(" · ")}
+                  href={`/projects/${item.project.slug}`}
+                  priority={index < 3}
+                />
+              ) : (
+                // Loose photos have no page of their own; on the home page
+                // they lead into the gallery so every card here behaves the
+                // same way when you hover or click it.
+                <GalleryCard
+                  key={item.key}
+                  photo={item.loose.photo}
+                  title={categoryLabel(item.loose.category)}
+                  caption={item.loose.note}
+                  href="/gallery"
+                  priority={index < 3}
+                />
+              ),
+            )}
+          </Masonry>
+        </div>
+
+        <div className="mt-10 flex justify-center">
+          <ButtonLink href="/gallery" variant="secondary">
+            See All Work
+          </ButtonLink>
+        </div>
+      </section>
+    </>
   );
 }

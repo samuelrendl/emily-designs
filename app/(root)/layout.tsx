@@ -1,15 +1,17 @@
+import type { ReactNode } from "react";
 import Footer from "@/components/footer/Footer";
-import Navbar from "@/components/navbar/Navrbar";
-import React from "react";
+import Nav from "@/components/navigation/Nav";
 
-const layout = ({ children }: { children: React.ReactNode }) => {
+/**
+ * Shell for every page: ink header, page content, ink footer. `<main>` wraps
+ * only the page body so the landmark does not swallow the nav and footer.
+ */
+export default function SiteLayout({ children }: { children: ReactNode }) {
   return (
-    <main className="flex flex-col min-h-dvh">
-      <Navbar />
-      {children}
+    <div className="flex min-h-dvh flex-col">
+      <Nav />
+      <main className="flex-1">{children}</main>
       <Footer />
-    </main>
+    </div>
   );
-};
-
-export default layout;
+}
