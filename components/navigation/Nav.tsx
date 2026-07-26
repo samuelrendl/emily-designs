@@ -61,10 +61,10 @@ export function Nav() {
         className="mx-auto flex max-w-[1800px] items-center justify-between gap-6 px-4 py-4 sm:px-8"
       >
         <Link href="/" className="no-underline">
-          <span className="block text-base font-bold uppercase tracking-wider sm:text-lg">
+          <span className="font-serif block text-lg font-normal uppercase tracking-widest sm:text-xl">
             Emily Kontu
           </span>
-          <span className="mt-1 block text-[10px] uppercase tracking-wider text-secondary-inverse sm:text-[11px]">
+          <span className="font-grotesk mt-1 block text-[10px] font-medium uppercase tracking-widest text-secondary-inverse sm:text-[11px]">
             Costume Design for Film &amp; Television
           </span>
         </Link>
@@ -76,10 +76,10 @@ export function Nav() {
                 href={item.href}
                 aria-current={isActive(item.href) ? "page" : undefined}
                 className={cn(
-                  "border-b-2 pb-1 text-xs font-bold uppercase tracking-wider no-underline",
-                  "transition-colors duration-fast ease-standard hover:text-ochre-bright",
+                  "font-grotesk border-b-2 pb-1 text-[11px] font-medium uppercase tracking-wider no-underline",
+                  "transition-colors duration-fast ease-standard hover:text-accent-pale",
                   isActive(item.href)
-                    ? "border-b-[var(--ochre-bright)] text-ochre-bright"
+                    ? "border-b-accent-pale text-accent-pale"
                     : "border-b-transparent text-primary-inverse",
                 )}
               >
@@ -95,7 +95,7 @@ export function Nav() {
           onClick={() => setIsMenuOpen((open) => !open)}
           aria-expanded={isMenuOpen}
           aria-controls="mobile-menu"
-          className="cursor-pointer border border-[var(--paper-white)] bg-transparent px-3 py-2 text-[11px] font-bold uppercase tracking-wider text-primary-inverse transition-colors duration-fast ease-standard hover:bg-paper hover:text-primary sm:hidden"
+          className="font-grotesk cursor-pointer border border-bone-bright bg-transparent px-3 py-2 text-[11px] font-medium uppercase tracking-wider text-primary-inverse transition-colors duration-fast ease-standard hover:bg-bone-bright hover:text-primary sm:hidden"
         >
           {isMenuOpen ? "Close" : "Menu"}
         </button>
@@ -113,9 +113,9 @@ export function Nav() {
               aria-current={isActive(item.href) ? "page" : undefined}
               onClick={() => setIsMenuOpen(false)}
               className={cn(
-                "p-4 text-2xl font-bold uppercase tracking-wider no-underline",
+                "font-grotesk p-4 text-2xl font-medium uppercase tracking-wider no-underline",
                 isActive(item.href)
-                  ? "text-ochre-bright"
+                  ? "text-accent-pale"
                   : "text-primary-inverse",
               )}
             >
@@ -128,7 +128,7 @@ export function Nav() {
               setIsMenuOpen(false);
               toggleRef.current?.focus();
             }}
-            className="absolute right-4 top-4 cursor-pointer border border-[var(--paper-white)] bg-transparent px-3 py-2 text-[11px] font-bold uppercase tracking-wider text-primary-inverse"
+            className="font-grotesk absolute right-4 top-4 cursor-pointer border border-bone-bright bg-transparent px-3 py-2 text-[11px] font-medium uppercase tracking-wider text-primary-inverse"
           >
             Close
           </button>

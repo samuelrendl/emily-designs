@@ -87,7 +87,7 @@ export function Lightbox({
         <button
           type="button"
           onClick={onClose}
-          className="type-label cursor-pointer border-0 bg-transparent p-2 text-primary-inverse transition-colors duration-fast ease-standard hover:text-ochre-bright"
+          className="type-label cursor-pointer border-0 bg-transparent p-2 text-primary-inverse transition-colors duration-fast ease-standard hover:text-accent-pale"
         >
           Close
         </button>
@@ -117,7 +117,7 @@ export function Lightbox({
           <button
             type="button"
             onClick={() => goTo(index - 1)}
-            className="type-label cursor-pointer border-0 bg-transparent p-2 text-primary-inverse transition-colors duration-fast ease-standard hover:text-ochre-bright"
+            className="type-label cursor-pointer border-0 bg-transparent p-2 text-primary-inverse transition-colors duration-fast ease-standard hover:text-accent-pale"
           >
             &larr; Prev
           </button>
@@ -135,7 +135,7 @@ export function Lightbox({
           <button
             type="button"
             onClick={() => goTo(index + 1)}
-            className="type-label cursor-pointer border-0 bg-transparent p-2 text-primary-inverse transition-colors duration-fast ease-standard hover:text-ochre-bright"
+            className="type-label cursor-pointer border-0 bg-transparent p-2 text-primary-inverse transition-colors duration-fast ease-standard hover:text-accent-pale"
           >
             Next &rarr;
           </button>

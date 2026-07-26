@@ -85,8 +85,10 @@ ESLint 10. Re-check after a Next minor release.
 ## Design system
 
 The visual language comes from the **Emily Costumes Design System**
-(`claude.ai/design`, project `bfefc4bf`). Its tokens are ported verbatim into
-the `:root` block of [`app/globals.css`](app/globals.css) and surfaced as
+(`claude.ai/design`, project `bfefc4bf`) — a fashion-editorial register: warm
+paper, oxblood as the one accent, hairline rules instead of boxes, and
+tracked-out uppercase credits. Its tokens are ported verbatim into the
+`:root` block of [`app/globals.css`](app/globals.css) and surfaced as
 Tailwind theme values in [`tailwind.config.ts`](tailwind.config.ts), so a token
 edit updates every utility.
 
@@ -95,18 +97,30 @@ edit updates every utility.
   the individual files.
 - Composite type tokens are exposed as `.type-h1`, `.type-body`, `.type-label`
   and so on, defined in `app/globals.css`.
-- One typeface throughout: Courier Prime, loaded via `next/font`. Hierarchy
-  comes from size, weight, tracking and case — never from a second family.
+- Two typefaces, both self-hosted via `next/font`: **Cormorant Garamond**
+  (serif) for anything that speaks — display, headings, quotes, form entry,
+  the wordmark — and **Archivo** (grotesk) for anything that labels — nav,
+  buttons, tags, credits, captions, folios. Headlines are sentence case;
+  labels/nav/buttons/tags are uppercase with wide tracking.
+- Corners are square everywhere except pills; the system ships no border
+  radius otherwise.
 
 Deliberate departures from the system, each explained in a comment at the
 relevant source line:
 
 - `Button` spells out every surface/variant pair rather than layering a "dark"
   patch, which otherwise leaves two competing hover rules on one element.
-- Selected gallery filters invert to an ink fill instead of using `tone="rust"`;
-  in the final black & white palette `--rust` equals `--black-ink`, so the
-  system's selected and unselected chips are pixel-identical.
+- `GalleryCard` (and the About photo) keep this site's original framed,
+  drop-shadowed card with a caption that slides up on hover, rather than
+  adopting the redesigned system's frameless flat-plate rule (permanent
+  caption under a hairline, no border or shadow). `--shadow-photo` is
+  retained as a site-specific token outside the ported system for this
+  reason. Colors and typefaces on the card do follow the new system.
 - `GalleryCard` takes a `photo` object instead of a bare `src`, because
   `next/image` needs intrinsic dimensions.
 - The mobile nav toggle is a `MENU` / `CLOSE` text label, following the
   system's "text labels first, no icon set" rule.
+- `eslint.config.mjs` re-expresses the system's `_adherence.oxlintrc.json`
+  as native ESLint rules (this project lints with ESLint, not oxlint), minus
+  its raw-`px`-literal ban — that rule doesn't fit a codebase that expresses
+  the type scale as Tailwind arbitrary-value classes.

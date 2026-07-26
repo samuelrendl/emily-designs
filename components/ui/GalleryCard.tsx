@@ -7,11 +7,16 @@ import { cn } from "./cn";
  * Masonry gallery pin — a photo with a dark caption plate that slides up on
  * hover, like a printed contact sheet. Square corners, thin ink frame.
  *
- * Deviation from the design system's GalleryCard: it takes a `photo` object
- * rather than a bare `src`/`height` pair, because next/image needs the
- * intrinsic width and height to reserve layout space (see
- * scripts/generate-image-dimensions.mjs). Everything else — the frame, the
- * dim-on-hover, the caption plate — matches the design system component.
+ * Two deviations from the design system's GalleryCard:
+ *
+ * 1. It takes a `photo` object rather than a bare `src`/`height` pair,
+ *    because next/image needs the intrinsic width and height to reserve
+ *    layout space (see scripts/generate-image-dimensions.mjs).
+ * 2. It keeps this site's existing framed/shadowed card with a caption that
+ *    slides up on hover, rather than adopting the redesigned system's
+ *    frameless flat-plate rule (permanent caption under a hairline, no
+ *    border or shadow). That's a deliberate choice, not an oversight — see
+ *    the "Design system" section of the README.
  */
 export interface GalleryCardProps {
   photo: Photo;
@@ -67,7 +72,7 @@ export function GalleryCard({
             : "translate-y-0 opacity-100",
         )}
       >
-        <div className="text-[13px] font-bold uppercase tracking-wide">
+        <div className="font-serif text-[16px] font-medium tracking-tight">
           {title}
         </div>
         {caption && (

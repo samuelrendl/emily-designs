@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <>
       <section className="bg-ink px-4 py-20 text-center text-primary-inverse sm:px-12 sm:py-24">
-        <p className="type-label text-ochre-bright">
+        <p className="type-label text-accent-pale">
           Costume Design for Film &amp; Television
         </p>
         <h1 className="type-display-1 mx-auto mt-5 max-w-[900px]">

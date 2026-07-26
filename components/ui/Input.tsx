@@ -4,7 +4,8 @@ import type { ChangeEvent } from "react";
 import { cn } from "./cn";
 
 /**
- * Underlined typewritten fields — a line typed on paper, not a boxed input.
+ * Ruled fields — a line on the page, not a boxed input. Serif entry,
+ * grotesque label.
  *
  * Ported from the design system for completeness. The site currently has no
  * form: it deploys as a static export to GitHub Pages, so there is no server
@@ -14,13 +15,13 @@ import { cn } from "./cn";
 const fieldWrap = "flex flex-col gap-1.5";
 
 const labelStyles =
-  "font-typewriter font-bold text-[11px] uppercase tracking-wider text-secondary";
+  "font-grotesk font-medium text-[10px] uppercase tracking-widest text-secondary";
 
 const fieldBase =
-  "font-typewriter text-[15px] text-primary bg-transparent rounded-none " +
+  "font-serif text-[20px] text-primary bg-transparent rounded-none " +
   "border-0 border-b border-primary px-0.5 py-2 outline-none " +
   "transition-[border-color,border-width] duration-fast ease-standard " +
-  "focus:border-b-2 focus:border-ochre placeholder:text-smoke-light";
+  "focus:border-b-2 focus:border-accent placeholder:text-smoke-light";
 
 export interface InputProps {
   labelText?: string;

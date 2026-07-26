@@ -1,16 +1,24 @@
 import type { Metadata } from "next";
-import { Courier_Prime } from "next/font/google";
+import { Archivo, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 
 /**
- * One family throughout, per the design system: hierarchy comes from size,
- * weight, tracking and case rather than from mixing typefaces.
+ * A pair, both light, per the design system: Cormorant Garamond for
+ * anything that speaks (display, headings, quotes, form entry, the
+ * wordmark), Archivo for anything that labels (nav, buttons, tags, credits).
  */
-const courierPrime = Courier_Prime({
+const cormorantGaramond = Cormorant_Garamond({
   subsets: ["latin"],
-  variable: "--font-courier-prime",
-  weight: ["400", "700"],
+  variable: "--font-cormorant",
+  weight: ["300", "400", "500", "600"],
   style: ["normal", "italic"],
+  display: "swap",
+});
+
+const archivo = Archivo({
+  subsets: ["latin"],
+  variable: "--font-archivo",
+  weight: ["400", "500", "600"],
   display: "swap",
 });
 
@@ -36,8 +44,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={courierPrime.variable}>
-      <body className="font-typewriter">{children}</body>
+    <html
+      lang="en"
+      className={`${cormorantGaramond.variable} ${archivo.variable}`}
+    >
+      <body className="font-grotesk">{children}</body>
     </html>
   );
 }

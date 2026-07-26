@@ -61,7 +61,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             <p className="type-caption mt-1.5 text-secondary">{project.year}</p>
           )}
         </div>
-        <Tag tone="ochre">{categoryLabel(project.category)}</Tag>
+        <Tag tone="accent">{categoryLabel(project.category)}</Tag>
       </header>
 
       {credits.length > 0 && (

@@ -13,19 +13,21 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        typewriter: "var(--font-typewriter)",
+        serif: "var(--font-serif)",
+        grotesk: "var(--font-grotesk)",
       },
       colors: {
-        ink: "var(--black-ink)",
-        "ink-soft": "var(--black-soft)",
-        charcoal: "var(--charcoal)",
-        paper: "var(--paper)",
-        "paper-dim": "var(--paper-dim)",
+        ink: "var(--ink)",
+        "ink-soft": "var(--ink-soft)",
+        graphite: "var(--graphite)",
+        bone: "var(--bone)",
+        "bone-dim": "var(--bone-dim)",
+        "bone-bright": "var(--bone-bright)",
         smoke: "var(--smoke)",
         "smoke-light": "var(--smoke-light)",
-        ochre: "var(--ochre)",
-        "ochre-bright": "var(--ochre-bright)",
-        "ochre-dim": "var(--ochre-dim)",
+        accent: "var(--accent)",
+        "accent-pale": "var(--accent-pale)",
+        "accent-deep": "var(--accent-deep)",
         overlay: "var(--bg-overlay)",
       },
       textColor: {
@@ -34,11 +36,12 @@ const config: Config = {
         secondary: "var(--text-secondary)",
         "secondary-inverse": "var(--text-secondary-inverse)",
         accent: "var(--text-accent)",
+        "accent-inverse": "var(--text-accent-inverse)",
       },
       borderColor: {
         primary: "var(--border-primary)",
         subtle: "var(--border-subtle)",
-        ochre: "var(--border-ochre)",
+        accent: "var(--border-accent)",
       },
       borderRadius: {
         none: "var(--radius-none)",
@@ -49,13 +52,13 @@ const config: Config = {
       boxShadow: {
         photo: "var(--shadow-photo)",
         lift: "var(--shadow-lift)",
-        "inset-frame": "var(--shadow-inset-frame)",
       },
       letterSpacing: {
         tight: "var(--tracking-tight)",
         normal: "var(--tracking-normal)",
         wide: "var(--tracking-wide)",
         wider: "var(--tracking-wider)",
+        widest: "var(--tracking-widest)",
       },
       transitionTimingFunction: {
         standard: "var(--ease-standard)",

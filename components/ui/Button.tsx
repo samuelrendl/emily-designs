@@ -7,11 +7,11 @@ export type ButtonSize = "sm" | "md" | "lg";
 export type ButtonSurface = "light" | "dark";
 
 /**
- * Typewritten, all-caps action button. Square corners, no shadow — presses
- * like a typewriter key (nudges down 1px rather than scaling).
+ * Editorial action button: tracked-out grotesque caps, square corners, no
+ * shadow — presses with a mechanical 1px nudge rather than a scale.
  */
 const base =
-  "inline-flex items-center justify-center gap-2 border font-typewriter font-bold uppercase tracking-wider rounded-sm cursor-pointer " +
+  "inline-flex items-center justify-center gap-2 border font-grotesk font-medium uppercase tracking-wider rounded-sm cursor-pointer " +
   "transition-[transform,background-color,color,border-color] duration-fast ease-standard active:translate-y-px";
 
 const sizeStyles: Record<ButtonSize, string> = {
@@ -37,44 +37,44 @@ type SurfaceVariant = `${ButtonSurface}-${ButtonVariant}`;
 
 const buttonVariants: Record<SurfaceVariant, string> = {
   "light-primary":
-    "bg-[var(--accent-primary)] text-primary-inverse border-[var(--accent-primary)] " +
-    "enabled:hover:bg-[var(--accent-primary-hover)] enabled:hover:border-[var(--accent-primary-hover)]",
+    "bg-ink text-primary-inverse border-primary " +
+    "enabled:hover:bg-accent enabled:hover:border-accent",
   "light-secondary":
-    "bg-transparent text-primary border-ochre " +
+    "bg-transparent text-primary border-subtle " +
     "enabled:hover:bg-ink enabled:hover:text-primary-inverse enabled:hover:border-primary",
   "light-ghost":
-    "bg-transparent text-primary border-transparent underline decoration-[var(--border-ochre)] underline-offset-4 " +
-    "enabled:hover:text-accent",
+    "bg-transparent text-primary border-transparent underline decoration-[var(--border-subtle)] underline-offset-4 " +
+    "enabled:hover:text-accent enabled:hover:decoration-accent",
   "dark-primary":
-    "bg-paper text-primary border-[var(--paper-white)] " +
-    "enabled:hover:bg-[var(--paper-dim)] enabled:hover:border-[var(--paper-dim)]",
+    "bg-bone-bright text-primary border-[var(--bone-bright)] " +
+    "enabled:hover:bg-accent-pale enabled:hover:border-accent-pale",
   "dark-secondary":
-    "bg-transparent text-primary-inverse border-ochre " +
-    "enabled:hover:bg-paper enabled:hover:text-primary enabled:hover:border-[var(--paper-white)]",
+    "bg-transparent text-primary-inverse border-[var(--graphite)] " +
+    "enabled:hover:bg-bone-bright enabled:hover:text-primary enabled:hover:border-[var(--bone-bright)]",
   "dark-ghost":
-    "bg-transparent text-primary-inverse border-transparent underline decoration-[var(--border-ochre)] underline-offset-4 " +
-    "enabled:hover:text-ochre-bright",
+    "bg-transparent text-primary-inverse border-transparent underline decoration-[var(--graphite)] underline-offset-4 " +
+    "enabled:hover:text-accent-inverse enabled:hover:decoration-accent-pale",
 };
 
 const linkVariants: Record<SurfaceVariant, string> = {
   "light-primary":
-    "bg-[var(--accent-primary)] text-primary-inverse border-[var(--accent-primary)] " +
-    "hover:bg-[var(--accent-primary-hover)] hover:border-[var(--accent-primary-hover)]",
+    "bg-ink text-primary-inverse border-primary " +
+    "hover:bg-accent hover:border-accent",
   "light-secondary":
-    "bg-transparent text-primary border-ochre " +
+    "bg-transparent text-primary border-subtle " +
     "hover:bg-ink hover:text-primary-inverse hover:border-primary",
   "light-ghost":
-    "bg-transparent text-primary border-transparent underline decoration-[var(--border-ochre)] underline-offset-4 " +
-    "hover:text-accent",
+    "bg-transparent text-primary border-transparent underline decoration-[var(--border-subtle)] underline-offset-4 " +
+    "hover:text-accent hover:decoration-accent",
   "dark-primary":
-    "bg-paper text-primary border-[var(--paper-white)] " +
-    "hover:bg-[var(--paper-dim)] hover:border-[var(--paper-dim)]",
+    "bg-bone-bright text-primary border-[var(--bone-bright)] " +
+    "hover:bg-accent-pale hover:border-accent-pale",
   "dark-secondary":
-    "bg-transparent text-primary-inverse border-ochre " +
-    "hover:bg-paper hover:text-primary hover:border-[var(--paper-white)]",
+    "bg-transparent text-primary-inverse border-[var(--graphite)] " +
+    "hover:bg-bone-bright hover:text-primary hover:border-[var(--bone-bright)]",
   "dark-ghost":
-    "bg-transparent text-primary-inverse border-transparent underline decoration-[var(--border-ochre)] underline-offset-4 " +
-    "hover:text-ochre-bright",
+    "bg-transparent text-primary-inverse border-transparent underline decoration-[var(--graphite)] underline-offset-4 " +
+    "hover:text-accent-inverse hover:decoration-accent-pale",
 };
 
 export interface ButtonProps {

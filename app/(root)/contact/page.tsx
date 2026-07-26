@@ -58,7 +58,7 @@ export default function ContactPage() {
                 {...(channel.external
                   ? { target: "_blank", rel: "noopener noreferrer" }
                   : {})}
-                className="text-primary underline decoration-[var(--border-ochre)] underline-offset-4 transition-colors duration-fast ease-standard hover:text-secondary"
+                className="text-primary underline decoration-[var(--border-accent)] underline-offset-4 transition-colors duration-fast ease-standard hover:text-secondary"
               >
                 {channel.value}
               </Link>

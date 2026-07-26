@@ -1,17 +1,17 @@
 import type { ReactNode } from "react";
 import { cn } from "./cn";
 
-export type TagTone = "ink" | "ochre" | "rust";
+export type TagTone = "ink" | "muted" | "accent";
 
 const toneStyles: Record<TagTone, string> = {
-  ink: "text-primary border-primary",
-  ochre: "text-[var(--text-ochre)] border-ochre",
-  rust: "text-accent border-[var(--text-accent)]",
+  ink: "text-primary border-subtle",
+  muted: "text-secondary border-subtle",
+  accent: "text-accent border-accent",
 };
 
 const tagBase =
-  "inline-flex items-center border bg-transparent rounded-sm px-[9px] py-1 " +
-  "font-typewriter font-bold text-[11px] uppercase tracking-wider";
+  "inline-flex items-center border bg-transparent rounded-sm px-[10px] py-1 " +
+  "font-grotesk font-medium text-[10px] uppercase tracking-widest";
 
 export interface TagProps {
   children: ReactNode;
@@ -19,8 +19,8 @@ export interface TagProps {
 }
 
 /**
- * Small bordered chip for categorizing a project — medium, discipline or
- * role. Square corners, uppercase, typewritten.
+ * Hairline chip for an era, medium or role credit. Grotesque caps, widest
+ * tracking.
  */
 export function Tag({ children, tone = "ink" }: TagProps) {
   return <span className={cn(tagBase, toneStyles[tone])}>{children}</span>;
@@ -35,15 +35,16 @@ export interface TagButtonProps {
 /**
  * Interactive twin of Tag, used for gallery filters.
  *
- * Two deliberate departures from the design system's filter row:
+ * One deliberate departure from the design system's filter row: it renders a
+ * real <button> rather than a clickable <span>, so the row is reachable by
+ * keyboard and announced as a pressable control.
  *
- * 1. It renders a real <button> rather than a clickable <span>, so the row is
- *    reachable by keyboard and announced as a pressable control.
- * 2. Selection inverts the chip instead of switching it to `tone="rust"`.
- *    Once the palette went pure black & white, `--rust` collapsed to the same
- *    `#111111` as `--black-ink`, which left the system's selected and
- *    unselected chips pixel-identical. Inverting to an ink fill keeps the
- *    state visible without introducing a colour the brand does not have.
+ * Selection is signalled with the real accent colour (text + underline rule),
+ * matching the system's own filter treatment. An earlier version of this
+ * component inverted to an ink fill instead, because the previous
+ * black-and-white palette had `--rust` collapse onto `--ink`, leaving
+ * selected and unselected chips pixel-identical — that constraint no longer
+ * applies now that accent is a distinct colour again.
  */
 export function TagButton({
   children,
@@ -59,8 +60,8 @@ export function TagButton({
         tagBase,
         "cursor-pointer transition-colors duration-fast ease-standard",
         selected
-          ? "bg-ink text-primary-inverse border-primary"
-          : "bg-transparent text-primary border-primary hover:border-ochre hover:text-[var(--text-ochre)]",
+          ? "bg-transparent text-accent border-accent"
+          : "bg-transparent text-primary border-subtle hover:text-accent hover:border-accent",
       )}
     >
       {children}
