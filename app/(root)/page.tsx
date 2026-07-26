@@ -33,7 +33,7 @@ export default function Home() {
       <section className="mx-auto max-w-[1800px] px-4 pb-16 pt-14 sm:px-12">
         <h2 className="type-h2">Selected Work</h2>
         <p className="type-body mt-2 max-w-[560px] text-secondary">
-          Costumes built for the screen and the stage — plus the sketches,
+          Costumes built for the screen and the stage - plus the sketches,
           recreations and sewing projects behind them.
         </p>
 

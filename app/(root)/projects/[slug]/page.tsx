@@ -33,7 +33,7 @@ export async function generateMetadata({
   return {
     title: project.title,
     description:
-      `${categoryLabel(project.category)} — costume design by Emily Kontu.` +
+      `${categoryLabel(project.category)} - costume design by Emily Kontu.` +
       (credits ? ` ${credits}.` : ""),
   };
 }
