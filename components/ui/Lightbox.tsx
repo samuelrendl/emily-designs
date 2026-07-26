@@ -93,30 +93,28 @@ export function Lightbox({
         </button>
       </div>
 
-      <div
-        // The photo and its controls are interactive; clicking them must not
-        // fall through to the backdrop's close handler.
-        onClick={(event) => event.stopPropagation()}
-        className="flex min-h-0 flex-1 items-center justify-center py-4"
-      >
+      <div className="flex min-h-0 flex-1 items-center justify-center py-4">
         <Image
           src={photo.src}
           alt={photo.alt}
           width={photo.width}
           height={photo.height}
           sizes="100vw"
+          // The photo itself is not a control, but clicking it must not fall
+          // through to the backdrop's close handler.
+          onClick={(event) => event.stopPropagation()}
           className="max-h-full w-auto max-w-full rounded-sm object-contain shadow-lift"
         />
       </div>
 
-      <div
-        onClick={(event) => event.stopPropagation()}
-        className="flex shrink-0 items-center justify-between gap-4"
-      >
+      <div className="flex shrink-0 items-center justify-between gap-4">
         {hasSiblings ? (
           <button
             type="button"
-            onClick={() => goTo(index - 1)}
+            onClick={(event) => {
+              event.stopPropagation();
+              goTo(index - 1);
+            }}
             className="type-label cursor-pointer border-0 bg-transparent p-2 text-primary-inverse transition-colors duration-fast ease-standard hover:text-accent-pale"
           >
             &larr; Prev
@@ -134,7 +132,10 @@ export function Lightbox({
         {hasSiblings ? (
           <button
             type="button"
-            onClick={() => goTo(index + 1)}
+            onClick={(event) => {
+              event.stopPropagation();
+              goTo(index + 1);
+            }}
             className="type-label cursor-pointer border-0 bg-transparent p-2 text-primary-inverse transition-colors duration-fast ease-standard hover:text-accent-pale"
           >
             Next &rarr;
